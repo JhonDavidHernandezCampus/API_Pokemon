@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.consulta{
+    display: flex;
+    
+}
+
+.pokemon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon img{
+    width: 300px;
+}
+
+.resultado{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    overflow-x: scroll;
+}

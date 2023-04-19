@@ -1,14 +1,29 @@
-let data = "";
+
+let agre = document.querySelector(".resultado");
+
 export default{
     async getPokemonApi(nom){
-        const poke = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=20&limit=1260`);
+        if (nom>1260) {
+            console.log("Pokemosn no existe");
+            agre.innerHTML=`<h1>El pokemon no existe</h1>
+            `;
+        }else{
+        const poke = await fetch(`https://pokeapi.co/api/v2/pokemon/${nom}`);
         const jsonData =  await poke.json();
-        const data = jsonData.results;
+        const data = jsonData;
 
         this.agregardatos(data);
+        console.log(data);
+        };
     },
     agregardatos(data){
-        console.log(data[0].url);
+            
+            agre.innerHTML=`
+            <div class="pokemon">
+                <img src="${data.sprites.front_default}" alt="">
+                <h1>${data.name}</h1>
+            </div>
+            `;
  /*        data.forEach(e => {
             
         
